@@ -1,0 +1,2 @@
+# PHP aplikacijama ne treba izvor browser klijenta (gateway servira dist/sdk.js)
+/sdk export-ignore

@@ -1,13 +1,14 @@
 {
     "name": "kancelarko/gateway-client",
-    "description": "Kako Laravel aplikacija živi iza k-gateway-a: provera tokena (JWKS sa gateway-a), korisnik iz tokena, pozivi drugih aplikacija kroz gateway.",
+    "description": "Kako Laravel aplikacija živi iza k-gateway-a: provera tokena (JWKS sa gateway-a), korisnik iz tokena, sesija vezana za korisnika, browser klijent (/bff/sdk.js), pozivi drugih aplikacija kroz gateway.",
     "type": "library",
     "license": "proprietary",
     "require": {
         "php": "^8.4",
         "firebase/php-jwt": "^6.11 || ^7.0",
         "illuminate/http": "^13.0",
-        "illuminate/support": "^13.0"
+        "illuminate/support": "^13.0",
+        "illuminate/view": "^13.0"
     },
     "require-dev": {
         "laravel/pint": "^1.27",

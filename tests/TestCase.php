@@ -40,6 +40,7 @@ abstract class TestCase extends Orchestra
         $app['config']->set('gateway.jwks_url', self::JWKS_URL);
         $app['config']->set('gateway.issuer', self::ISSUER);
         $app['config']->set('cache.default', 'array');
+        $app['config']->set('app.key', 'base64:'.base64_encode(str_repeat('k', 32)));
     }
 
     /**

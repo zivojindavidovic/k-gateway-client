@@ -18,6 +18,10 @@ declare(strict_types=1);
 | jwks_cache_ttl  koliko se kljucevi kesiraju (sekunde); nepoznat `kid` osvezava ranije
 | internal_url    gateway u internoj mrezi, za pozive drugih aplikacija
 |
+| client          browser klijent (`<x-gateway::client />`, /bff/sdk.js):
+|   poll                provera sesije u sekundama dok korisnik radi na strani (najmanje 15)
+|   on_unauthenticated  "dialog" (prijava u popup-u, rad na strani ostaje) ili "redirect" (odmah na prijavu)
+|
 */
 
 return [
@@ -27,4 +31,8 @@ return [
     'leeway' => (int) env('GATEWAY_LEEWAY', 60),
     'jwks_cache_ttl' => (int) env('GATEWAY_JWKS_CACHE_TTL', 600),
     'internal_url' => env('GATEWAY_INTERNAL_URL', 'http://k-gateway:9090'),
+    'client' => [
+        'poll' => (int) env('GATEWAY_CLIENT_POLL', 60),
+        'on_unauthenticated' => env('GATEWAY_CLIENT_ON_UNAUTHENTICATED', 'dialog'),
+    ],
 ];
