@@ -3,3 +3,6 @@ composer.lock
 .phpunit.result.cache
 .phpunit.cache/
 sdk/node_modules/
+
+/.idea
+/.vscode
