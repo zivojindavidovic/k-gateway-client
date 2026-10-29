@@ -21,7 +21,15 @@ final class GatewayUrls
     }
 
     /**
-     * Prijava sa povratkom; za XHR koji je dobio 401 (navigaciju gateway sam šalje na prijavu).
+     * Browser klijent gateway-a; uključuje ga `<x-gateway::client />`.
+     */
+    public static function sdk(): string
+    {
+        return '/bff/sdk.js';
+    }
+
+    /**
+     * Prijava sa povratkom (`returnTo`). Aplikacijama ne treba: 401 rešava browser klijent.
      */
     public static function login(string $returnTo = '/'): string
     {
@@ -29,7 +37,7 @@ final class GatewayUrls
     }
 
     /**
-     * `{authenticated, user}` za proveru iz JS-a (npr. kad se tab vrati u fokus).
+     * `{authenticated, user}`. Aplikacijama ne treba: sesiju prati browser klijent.
      */
     public static function session(): string
     {

@@ -62,5 +62,6 @@ it('poziva drugu aplikaciju kroz gateway sa istim tokenom', function (): void {
 it('zna putanje gateway-a', function (): void {
     expect(GatewayUrls::logout())->toBe('/logout')
         ->and(GatewayUrls::account())->toBe('/account')
+        ->and(GatewayUrls::sdk())->toBe('/bff/sdk.js')
         ->and(GatewayUrls::login('/invoices?a=1'))->toBe('/bff/login?returnTo=%2Finvoices%3Fa%3D1');
 });
